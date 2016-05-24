@@ -206,12 +206,12 @@ def mainMenu():
     session_attributes = {}
     card_title = "Welcome"
     speech_output = "Great! You're all set. I found three accounts in your profile. Which account can I " \
-                    "help you with? 1. 3 3 3 3 Piedmont Rd? 2. 1 0 4 6 Peachtree Road? 3. 2 1 2 1 Jamieson Avenue?"
+                    "help you with? 1. 3 2 1 0 Piedmont Rd? 2. 1 0 4 6 Peachtree Road? 3. 2 1 2 1 Jamieson Avenue?"
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "I'm here to help. You can ask me about your current bill, your energy usage, or " \
-                    "energy usage in your state. How can I help?"
+    reprompt_text = "I'm here to help. You can ask me about your current bill, just say the number" \
+                    "corresponding with the account, 1. 3 2 1 0 Piedmont Rd? 2. 1 0 4 6 Peachtree Road? 3. 2 1 2 1 Jamieson Avenue?"
 
     should_end_session = False
 
