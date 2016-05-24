@@ -13,7 +13,7 @@ information.
 This schema defines the intents and word formats for which our skill will listen. This code needs to be entered into the skill configuration on the Alexa page of your Amazon Developer Account.
 <br>
 
-<b>PowerCo.py</b>
+<b>PowerCo.py</b><br>
 This is the Python source code for the Lambda function that powers the skill.
 <br>
 
@@ -21,5 +21,5 @@ This is the Python source code for the Lambda function that powers the skill.
 This is Python code that is used to test how a JSON object is returned from an API and processed for use by the Alexa skill.
 <br>
 
-<b>SampleUtterances.txt</b>
+<b>SampleUtterances.txt</b><br>
 This code needs to be entered into the skill configuration on the Alexa page of your Amazon Developer Account.
