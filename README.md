@@ -8,7 +8,7 @@ then read the account detail, including the current amount due, due date, and en
 me some stats" to have Alexa read some analysis of the current bill. The skill then exits after it has read the analysis
 information.
 
-<h2>Source Files<h2>
+<h2>Source Files</h2>
 <b>IntentSchema.json</b><br>
 This schema defines the intents and word formats for which our skill will listen. This code needs to be entered into the skill configuration on the Alexa page of your Amazon Developer Account.
 <br>
