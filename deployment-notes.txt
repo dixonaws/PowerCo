@@ -11,4 +11,6 @@ aws --profile dixonaws@amazon.com lambda update-function-code --function-name Po
 
 This will immediately update the Lambda function
 
-//todo create a codepipeline that zips and publishes the code when it is pushed to CodeCommit, then sends a message to a slack channel
+//todo create a codepipeline that zips and publishes the code when it is pushed to github
+//todo git integration sends a message to a slack channel (done)
+//todo jenkins integration sends a message once Lambda function is published

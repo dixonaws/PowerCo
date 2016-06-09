@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="324ff8f1-4452-48d3-abf9-01e7ceb64612" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PowerCo2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debugme.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deployment-notes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCoAPITest.py" afterPath="$PROJECT_DIR$/PowerCoAPITest.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/debugme.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCo2-deployment.zip" afterPath="$PROJECT_DIR$/PowerCo2-deployment.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCo2.py" afterPath="$PROJECT_DIR$/PowerCo2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deployment-notes.txt" afterPath="$PROJECT_DIR$/deployment-notes.txt" />
     </list>
     <ignored path="PowerCo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,23 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PowerCoAPITest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PowerCoAPITest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#56#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PowerCo2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PowerCo2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PowerCo2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="219" column="71" selection-start-line="219" selection-start-column="71" selection-end-line="219" selection-end-column="71" />
+            <state relative-caret-position="676">
+              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -97,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deployment-notes.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deployment-notes.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deployment-notes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="134" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
+            <state relative-caret-position="225">
+              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -130,14 +117,14 @@
         <option value="$PROJECT_DIR$/PowerCo.py" />
         <option value="$PROJECT_DIR$/debugme.py" />
         <option value="$PROJECT_DIR$/PowerCoAPITest.py" />
-        <option value="$PROJECT_DIR$/PowerCo2.py" />
         <option value="$PROJECT_DIR$/deployment-notes.txt" />
+        <option value="$PROJECT_DIR$/PowerCo2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="435" />
-    <option name="y" value="45" />
+    <option name="x" value="868" />
+    <option name="y" value="105" />
     <option name="width" value="1653" />
     <option name="height" value="1170" />
   </component>
@@ -210,14 +197,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PowerCo2.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.PowerCoAPITest">
+  <component name="RunManager" selected="Python.PowerCo2">
     <configuration default="false" name="PowerCoAPITest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -369,8 +356,26 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.PowerCoAPITest" />
+    <configuration default="false" name="PowerCo2" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PowerCo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PowerCo2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.PowerCo2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.PowerCoAPITest" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -395,10 +400,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="435" y="45" width="1653" height="1170" extended-state="0" />
-    <editor active="true" />
+    <frame x="868" y="105" width="1653" height="1170" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15486993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15486993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -658,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/debugme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="148" column="9" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
-          <folding>
-            <element signature="e#330#367#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PowerCoAPITest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -698,20 +693,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deployment-notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PowerCo2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="219" column="71" selection-start-line="219" selection-start-column="71" selection-end-line="219" selection-end-column="71" />
+        <state relative-caret-position="676">
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deployment-notes.txt">
+    <entry file="file://$PROJECT_DIR$/debugme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="134" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
+        <state relative-caret-position="555">
+          <caret line="148" column="9" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
           <folding />
         </state>
       </provider>

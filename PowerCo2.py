@@ -3,7 +3,6 @@ from __future__ import print_function
 import urllib2
 import json
 
-
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
     etc.) The JSON body of the request is provided in the event parameter.
@@ -159,19 +158,33 @@ def getAccount(intent, session):
 
 # ------------------------- getAccount()
 
-def retrieveAccountInfo():
-    url = "http://172.61.1.221:8080/RESTTest-0.1/api/invoices/1"
+def retrieveAccountInfo(id):
+    print("*** in retrieveAccountInfo()")
+
+    url = "http://172.61.1.221:8080/RESTTest-0.1/api/invoices/" + str(id)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
+    response=0
 
-    response = opener.open(url).read()
+    try:
+        response = opener.open(url, timeout=2).read()
+
+    except urllib2.URLError:
+        print("URL error, trying localhost...")
+
+        try:
+            url = "http://localhost:8080/RESTTest/api/invoices/1"
+            response = opener.open(url, timeout=2).read()
+
+        except urllib2.HTTPError:
+            print("tried both URLs, giving up")
+            return
 
     JSONinvoice = json.loads(str(response))
 
-    strAmountDollars = (JSONinvoice['amountDollars'])
-    print(strAmountDollars)
-
+    print("Returning JSONinvoice object")
+    return(JSONinvoice)
 
 # ------------------------- getAccountCommand()
 
@@ -217,7 +230,7 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Hi there! You're on line with PowerCo (version 1.2)! To verify it's you, please say " \
+    speech_output = "Hi there! You're on line with PowerCo (version 1.3)! To verify it's you, please say " \
                     "the 4 digit code that you created when you enabled the skill for the first time."
 
     # If the user either does not reply to the welcome message or says something
@@ -292,3 +305,12 @@ def build_response(session_attributes, speechlet_response):
         'sessionAttributes': session_attributes,
         'response': speechlet_response
     }
+
+def main():
+    print("*** in main()")
+
+    JSONinvoice=retrieveAccountInfo(1)
+
+    strAmountDollars = (JSONinvoice['amountDollars'])
+    print(strAmountDollars)
+
