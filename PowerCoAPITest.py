@@ -8,18 +8,6 @@ import time
 import sys
 import json
 
-# method definitions
-
-# get the number of records in the file
-def getNumberOfRecords(fileName):
-    with open(fileName) as f:
-        for i, l in enumerate(f):
-            pass
-    return i + 1
-
-
-# class definitions
-
 ## Main
 script, args0 = argv
 
@@ -31,7 +19,7 @@ print "PowerCo API Test, v1.0"
 url=baseurl
 startTime=int(round(time.time() * 1000))
 endTime=0;
-sys.stdout.write(url + ": GETting city... ")
+sys.stdout.write(url + ": GETting invoice... ")
 
 opener=urllib2.build_opener()
 
@@ -51,13 +39,15 @@ try:
 except urllib2.HTTPError:
     print "Error in GET..."
 
-# decode the returned JSON response into JSONCity (dict)
-JSONCity = json.loads(str(response))
+# decode the returned JSON response into JSONInvoice (a Python dict object)
+JSONinvoice = json.loads(str(response))
 
-strCityPostalcode=JSONCity['postalCode']
 
-print "The postal code of the city object returned is: " + strCityPostalcode
+print JSONinvoice
+strAmountDollars=str(JSONinvoice['amountDollars'])
+strAmountCents=str(JSONinvoice['amountCents'])
 
+print "The amount of the invoice object returned is: " + strAmountDollars
 
 
 

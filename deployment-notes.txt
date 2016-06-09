@@ -1,0 +1,14 @@
+1. Update PowerCo2.py Python code
+The handler (in Lambda configuration) must be PowerCo2.lambda_handler
+
+2. Create a deployment package
+We aren't using any special libraries, so we canm just create a zip file with the Python code
+
+zip PowerCo2-deployment.zip PowerCo2.py
+
+3. Update and publish the Lambda function
+aws --profile dixonaws@amazon.com lambda update-function-code --function-name PowerCo2 --zip-file fileb://PowerCo2-deployment.zip --publish
+
+This will immediately update the Lambda function
+
+//todo create a codepipeline that zips and publishes the code when it is pushed to CodeCommit, then sends a message to a slack channel
