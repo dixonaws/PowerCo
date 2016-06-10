@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import urllib2
 import json
+import time
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -119,11 +120,12 @@ def verifyPIN(intent, session):
 
 def getAccount(intent, session):
     print("*** getAccount: I received intent" + str(intent));
-    strAccountNumber = "2 0 1 3 4 dash 0 9 4"
 
     card_title = "Welcome"
 
-    url = "http://172.16.1.221:8080/RESTTest-0.1/api/invoices/1"
+    selectedAccount=intent['slots']['Account']['value']
+
+    url = "http://172.16.1.221:8080/RESTTest-0.1/api/invoices/" + str(selectedAccount)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
@@ -139,10 +141,15 @@ def getAccount(intent, session):
     strAmountCents = str((JSONinvoice['amountCents']))
     strServicePeriodEnd = str((JSONinvoice['servicePeriodEnd']))
 
-    speech_output = "I found details for that account. The current amount due is " + strAmountDollars + " dollars and " + strAmountCents + " cents."
+    speech_output="<speak>"
+    speech_output+="I found details for that account. The current amount due is " + strAmountDollars + " dollars and " + strAmountCents + " cents"
 
     # we need to deal with Java style dates
-    speech_output += "For the period ending " + strServicePeriodEnd
+    speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
+
+    speech_output+="<break time='0.5s'/>This amount is due on July 10, 2016."
+
+    speech_output+="</speak>"
 
     # speech_output = "Here are some details for that account... account number " + strAccountNumber + ",,," \
     #                                                                                                 "Total amount due for the month of May: $94.12" + ",,,," \
@@ -152,6 +159,8 @@ def getAccount(intent, session):
 
     # Setting this to true ends the session and exits the skill.
     should_end_session = False
+
+    print("*** done with getAccount(), returning speech...")
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
 
@@ -183,10 +192,43 @@ def retrieveAccountInfo(id):
 
     JSONinvoice = json.loads(str(response))
 
-    print("Returning JSONinvoice object")
+    print("*** done with retriveAccountInfo(), returning JSONinvoice object...")
     return(JSONinvoice)
 
-# ------------------------- getAccountCommand()
+# ------------------------- getAccount()
+
+def getAccountById(accountId):
+    print("*** in getAccountById(), getting account" + str(accountId))
+    accountUrl="http://172.16.1.221:8080/RESTTest-0.1/api/accounts/" + str(accountId)
+
+    startTime=int(round(time.time() * 1000))
+    endTime=0;
+    print(accountUrl + ": GETting account... ")
+
+    opener=urllib2.build_opener()
+
+    # ask the API to return JSON
+    opener.addheaders=[('Accept', 'application/json')]
+
+    response=""
+
+    try:
+        # our response string should result in a JSON object
+        response=opener.open(accountUrl).read()
+
+        endTime=int(round(time.time() * 1000))
+        print("done (" + str(endTime-startTime) + " ms).")
+
+    except urllib2.HTTPError:
+        print("Error in GET...")
+
+    # decode the returned JSON response into JSONaccount (a Python dict object)
+    JSONaccounts = json.loads(str(response))
+
+    print("*** done with getAccountById(), returning JSONaccounts...")
+    return(JSONaccounts)
+
+# ------------------------- getAccount()
 
 def getAccountCommand(intent, session):
     print("*** getAccountCommand: I received intent" + str(intent));
@@ -223,20 +265,59 @@ def on_session_ended(session_ended_request, session):
 
 # --------------- Functions that control the skill's behavior ------------------
 
+def getCustomer(id):
+    print("*** in getCustomer()")
+
+    baseurl="http://172.16.1.221:8080/RESTTest-0.1/api/customer/"
+    accountUrl=baseurl+str(id)
+
+    startTime = int(round(time.time() * 1000))
+    endTime = 0;
+    print(accountUrl + ": GETting account... ")
+
+    opener = urllib2.build_opener()
+
+    # ask the API to return JSON
+    opener.addheaders = [('Accept', 'application/json')]
+
+    response = ""
+
+    try:
+        # our response string should result in a JSON object
+        response = opener.open(accountUrl).read()
+
+        endTime = int(round(time.time() * 1000))
+        print
+        "done (" + str(endTime - startTime) + " ms)."
+
+    except urllib2.HTTPError:
+        print
+        "Error in GET..."
+
+    # decode the returned JSON response into JSONIaccount (a Python dict object)
+    JSONcustomer = json.loads(str(response))
+
+    print("*** done with getCustomer, returning JSONcustomer...")
+    return (JSONcustomer)
+
+# --------------- end getCustomer() ------------------
+
 def get_welcome_response():
     """ If we wanted to initialize the session to have some attributes we could
     add those here
     """
 
+    print("*** in get_welcome_respomse()")
+
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Hi there! You're on line with PowerCo (version 1.3)! To verify it's you, please say " \
-                    "the 4 digit code that you created when you enabled the skill for the first time."
+    speech_output = "<speak>Hi there! You're on line with PowerCo (version 1.7)! To verify it's you, please say " \
+                    "the 4 digit code that you created when you enabled the skill for the first time.</speak>"
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "You created a 4 digit pin code the first time you enabled the" \
-                    "PowerCo skill. If you remember it, go ahead and say it now."
+    reprompt_text = "<speak>You created a 4 digit pin code the first time you enabled the" \
+                    "PowerCo skill. If you remember it, go ahead and say it now.</speak>"
 
     should_end_session = False
 
@@ -247,18 +328,41 @@ def get_welcome_response():
 # ------------------------- mainMenu()
 
 def mainMenu():
+    print("*** in mainMenu()")
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Great! You're all set. I found three accounts in your profile. Which account can I " \
-                    "help you with? 1. 3 2 1 0 Piedmont Rd? 2. 1 0 4 6 Peachtree Road? 3. 2 1 2 1 Jamieson Avenue?"
+
+    # hit the API and get the customer details, like the first name, last name, and associated accounts
+    JSONcustomer=getCustomer(1)
+
+    accountFirstName=JSONcustomer['firstName']
+    accountLastName=JSONcustomer['lastName']
+
+    JSONaccounts = JSONcustomer['accounts']
+    intAccounts=len(JSONaccounts)
+
+    speech_output="<speak>"
+    speech_output+="Great! Hello " + accountFirstName + " " + accountLastName + "! ... "
+    speech_output+="I found " + str(intAccounts) + " accounts in your profile. Which account can I help you with?"
+
+    # loop through the accounts associated with this customer and speak the service addresses
+    i=1
+    for accounts in JSONaccounts:
+        account = getAccountById(accounts['id'])
+        speech_output+="Account " + str(i) + "<break time='0.5s'/> <say-as interpret-as='digits'>" + account['serviceAddress'] + "</say-as>"
+        speech_output+="<break time='1s'/>"
+        i+=1
+
+    speech_output+="</speak>"
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = "I'm here to help. You can ask me about your current bill, just say the number" \
-                    "corresponding with the account, 1. 3 2 1 0 Piedmont Rd? 2. 1 0 4 6 Peachtree Road? 3. 2 1 2 1 Jamieson Avenue?"
+                    "corresponding with the account"
 
     should_end_session = False
 
+    print("*** done with mainMenu(), now the user should have selected an account...")
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
@@ -280,9 +384,13 @@ def handle_session_end_request():
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
     return {
+#        'outputSpeech': {
+#            'type': 'PlainText',
+#            'text': output
+#        },
         'outputSpeech': {
-            'type': 'PlainText',
-            'text': output
+            'type': 'SSML',
+            'ssml': output
         },
         'card': {
             'type': 'Simple',
