@@ -1,4 +1,4 @@
-<h1>Alexa skill - PowerCo</h1>
+<h1>Alexa skill - PowerCo v1.0</h1>
 This skill allows PowerCo Energy customers to check their recent bill and energy usage.
 Launch the skill by saying "Launch PowerCo" or "Open PowerCo" The program will then ask you to authenticate with
 a 4-digit PIN. In this version, the PIN has been hardcoded as "9876". The skill will then list the addresses that are
