@@ -12,10 +12,14 @@ aws --profile dixonaws@amazon.com lambda update-function-code --function-name Po
 This will immediately update the Lambda function
 
 //todo create web service that returns a list of invoices for an account number
+done
 
 //todo create a codepipeline that zips and publishes the code when it is pushed to github
 
 //todo git integration sends a message to a slack channel (done)
 
+
 //todo jenkins integration sends a message once Lambda function is published
 curl -X POST --data-urlencode 'payload={"channel": "#fpl-alexa", "username": "aws_codepipeline", "text": "PowerCo2 v1.4 has been tested and updated in Lambda."}' https://hooks.slack.com/services/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
+
+aws --profile dixonaws@amazon.com lambda update-function-code --function-name PowerCo3 --zip-file fileb://PowerCo3-deployment.zip --publish
