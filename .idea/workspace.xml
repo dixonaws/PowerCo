@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="324ff8f1-4452-48d3-abf9-01e7ceb64612" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DateScratchpad.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowerCo-old.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowerCo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowerCo2-deployment.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowerCo2.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCo3-deployment.zip" afterPath="$PROJECT_DIR$/PowerCo3-deployment.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCo3.py" afterPath="$PROJECT_DIR$/PowerCo3.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deployment-notes.txt" afterPath="$PROJECT_DIR$/deployment-notes.txt" />
     </list>
     <ignored path="PowerCo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +36,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="425">
-                <caret line="38" column="59" lean-forward="false" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+              <first_editor relative-caret-position="165">
+                <caret line="11" column="90" lean-forward="false" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -757,8 +748,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="425">
-            <caret line="38" column="59" lean-forward="false" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+          <first_editor relative-caret-position="165">
+            <caret line="11" column="90" lean-forward="false" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
             <folding />
           </first_editor>
           <second_editor />

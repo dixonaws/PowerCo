@@ -5,11 +5,11 @@ Launch the skill by saying "Launch PowerCo" or "Open PowerCo." The interaction i
 
 <ol>
 <li>The program will first ask you to authenticate with
-a 4-digit PIN. In this version, the PIN has been hardcoded as "9876".</li> 
+a 4-digit PIN. In this version, the PIN has been hardcoded as "9876"</li> 
 <li>Once authenticated, the skill will then list the addresses that are
-associated with your account.</li>
+associated with your account</li>
 <li>Choose one of the addresses by saying the number that corresponds to the address, like "Account number two."</li>
-<li>Alexa will then read the account detail, including the current amount due and due date.</li>
+<li>Alexa will then read the account detail, including the current amount due and due date</li>
 </ol>
  
 <h2>Source Files</h2>
@@ -22,7 +22,6 @@ This is the Python source code for the Lambda function that powers the skill.
 <b>IntentSchema.json</b><br>
 This schema defines the intents and word formats for which our skill will listen. This code needs to be entered into the skill configuration on the Alexa page of your Amazon Developer Account.
 <br>
-
 
 <b>PowerCoAPITest.py</b><br>
 This is Python code that is used to test how a JSON object is returned from an API and processed for use by the Alexa skill.
