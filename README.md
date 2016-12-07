@@ -2,6 +2,8 @@
 This skill allows PowerCo Energy customers to check their recent bill and energy usage.
 Launch the skill by saying "Launch PowerCo" or "Open PowerCo." The interaction is described below.
 <p>
+Demonstration: https://youtu.be/XmNN15Y5neY
+<p>
 
 <ol>
 <li>The program will first ask you to authenticate with
