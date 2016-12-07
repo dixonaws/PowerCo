@@ -31,8 +31,17 @@ This is Python code that is used to test how a JSON object is returned from an A
 This code needs to be entered into the skill configuration on the Alexa page of your Amazon Developer Account.
 
 <b>deployToLambda.sh</b>
-bash script to package and deploy PowerCo.py to Lambda using your local AWS account credentials.
+bash script to package and deploy PowerCo.py to Lambda using your local AWS account credentials. You'll need your access_key_id and secret_access_key. See this link to setup your local AWS account credentials if needed: http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files
+
+<h2>Deployment</h2>
+Unfortunately, AWS CloudFormation isnt able to deploy to the Alexa Skills Kit at this time. To deploy PowerCo, follow these steps:<br>
+<ol>
+<li>Create the Lambda function called PowerCo.</li>
+<li>Create an Alexa Skill in the Amazon Developer Portal with the configuration in ASK-Config.txt</li>
+<li>Visit alexa.amazon.com to activate the account on your Echo device.</li>
+<li>Say "Alexa, open PowerCo" !
+</ol>
 
 <h2>Future Improvements</h2>
 <b>Account Linking</b><br>
-Demonstrate account linking when signing up for the skill. 
+Add account linking when signing up for the skill.
