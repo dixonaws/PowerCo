@@ -22,6 +22,8 @@ def lambda_handler(event, context):
     #         "amzn1.echo-sdk-ams.app.[unique-value-here]"):
     #     raise ValueError("Invalid Application ID")
 
+    print("event[session][user][userId]=" + str(event['session']['user']['userId']))
+
     if event['session']['new']:
         on_session_started({'requestId': event['request']['requestId']},
                            event['session'])
@@ -147,9 +149,10 @@ def getAccount(intent, session):
     speech_output+="I found details for that account. The current amount due is " + strAmountDollars + " dollars and " + strAmountCents + " cents"
 
     # we need to deal with Java style dates
-    speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
+    #speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
+    speech_output += "for the period ending July 31, 2016."
 
-    speech_output+="<break time='0.5s'/>This amount is due on July 10, 2016."
+    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on August 10"
 
     speech_output+="</speak>"
 
@@ -313,13 +316,13 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "<speak>Hi there! You're on line with PowerCo (version 3.1)! To verify it's you, please say " \
+    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.2)! To verify it's you, please say " \
                     "the 4 digit code that you created when you enabled the skill for the first time.</speak>"
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "<speak>You created a 4 digit pin code the first time you enabled the" \
-                    "PowerCo skill. If you remember it, go ahead and say it now.</speak>"
+    reprompt_text = "You created a 4 digit pin code the first time you enabled the" \
+                    "PowerCo skill. If you remember it, go ahead and say it now."
 
     should_end_session = False
 
@@ -374,7 +377,7 @@ def mainMenu():
 
 def handle_session_end_request():
     card_title = "Session Ended"
-    speech_output = "Thank you for being a PowerCo customer." \
+    speech_output = "Thank you for being a Power Company customer." \
                     "Have a nice day! "
 
     # Setting this to true ends the session and exits the skill.
