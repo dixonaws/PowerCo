@@ -105,7 +105,7 @@ def on_intent(intent_request, session):
 
 def verifyPIN(intent, session):
     # We hardcode the matching PIN for now
-    intCorrectPIN = 9876
+    intCorrectPIN = 9877
 
     print("*** verifyPIN: I received intent " + str(intent));
 
