@@ -37,7 +37,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="705">
-                <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -107,6 +107,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="jpdixon &lt;jpdixon@gmail.com&gt;" />
         <option value="dixonaws &lt;dixonaws@amazon.com&gt;" />
       </list>
     </option>
@@ -149,8 +150,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="23" />
+    <option name="x" value="70" />
+    <option name="y" value="46" />
     <option name="width" value="1232" />
     <option name="height" value="722" />
   </component>
@@ -335,7 +336,7 @@
       <workItem from="1485459237262" duration="163000" />
       <workItem from="1485459439447" duration="23000" />
       <workItem from="1487637378374" duration="183000" />
-      <workItem from="1487638366933" duration="15000" />
+      <workItem from="1487638366933" duration="143000" />
     </task>
     <task id="LOCAL-00001" summary="Added deployment instructions">
       <created>1481072358758</created>
@@ -344,14 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1481072358758</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added deployment instructions">
+      <created>1487638400061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1487638400061</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384000" />
+    <option name="totallyTimeSpent" value="512000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1232" height="722" extended-state="0" />
+    <frame x="70" y="46" width="1232" height="722" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -634,7 +642,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="705">
-            <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
