@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="324ff8f1-4452-48d3-abf9-01e7ceb64612" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowerCo.py" afterPath="$PROJECT_DIR$/PowerCo.py" />
     </list>
     <ignored path="PowerCo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -367,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487642734386</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed hardcoded PIN">
+      <created>1487646334643</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1487646334643</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
