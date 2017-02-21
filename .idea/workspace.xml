@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/PowerCo.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
-              <caret line="142" column="18" lean-forward="false" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="18" />
+              <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -109,6 +109,7 @@
     <findStrings>
       <find>customer</find>
       <find>http://</find>
+      <find>172.16.1.54</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -543,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487651529305</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed API URL for customers">
+      <created>1487652395133</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1487652395133</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -883,7 +891,7 @@
     <entry file="file://$PROJECT_DIR$/PowerCo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
-          <caret line="142" column="18" lean-forward="false" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="18" />
+          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="31" />
           <folding />
         </state>
       </provider>

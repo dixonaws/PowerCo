@@ -284,7 +284,7 @@ def on_session_ended(session_ended_request, session):
 def getCustomer(id):
     print("*** in getCustomer()")
 
-    baseurl="172.16.1.54:8080/api/customers/"
+    baseurl="http://172.16.1.54:8080/api/customers/"
     accountUrl=baseurl+str(id)
 
     startTime = int(round(time.time() * 1000))
