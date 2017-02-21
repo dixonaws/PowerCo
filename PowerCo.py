@@ -140,7 +140,7 @@ def getAccount(intent, session):
 
     selectedAccount=intent['slots']['Account']['value']
 
-    url = "http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com/api/invoices/" + str(selectedAccount)
+    url = "http://172.16.1.54:8080/api/invoices/" + str(selectedAccount)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
@@ -186,7 +186,7 @@ def getAccount(intent, session):
 def retrieveAccountInfo(id):
     print("*** in retrieveAccountInfo()")
 
-    url = "http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com/api/invoices/" + str(id)
+    url = "http://172.16.1.54:8080/api/invoices/" + str(id)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
@@ -215,7 +215,7 @@ def retrieveAccountInfo(id):
 
 def getAccountById(accountId):
     print("*** in getAccountById(), getting account" + str(accountId))
-    accountUrl="http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com/api/accounts/" + str(accountId)
+    accountUrl="http://172.16.1.54:8080/api/accounts/" + str(accountId)
 
     startTime=int(round(time.time() * 1000))
     endTime=0;

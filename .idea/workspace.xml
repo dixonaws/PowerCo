@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/PowerCo.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
-              <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="31" />
+              <caret line="286" column="20" lean-forward="false" selection-start-line="286" selection-start-column="13" selection-end-line="286" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -108,8 +108,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>customer</find>
-      <find>http://</find>
       <find>172.16.1.54</find>
+      <find>http://</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -551,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487652395133</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed API URL for customers">
+      <created>1487652874320</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1487652874321</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -891,7 +898,7 @@
     <entry file="file://$PROJECT_DIR$/PowerCo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
-          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="31" />
+          <caret line="286" column="20" lean-forward="false" selection-start-line="286" selection-start-column="13" selection-end-line="286" selection-end-column="20" />
           <folding />
         </state>
       </provider>
