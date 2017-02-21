@@ -49,8 +49,8 @@
       <file leaf-file-name="PowerCo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PowerCo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="329" column="90" lean-forward="false" selection-start-line="329" selection-start-column="90" selection-end-line="329" selection-end-column="90" />
+            <state relative-caret-position="260">
+              <caret line="165" column="151" lean-forward="false" selection-start-line="165" selection-start-column="151" selection-end-line="165" selection-end-column="151" />
               <folding />
             </state>
           </provider>
@@ -565,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487653519270</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed API URL for customers">
+      <created>1487653540741</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1487653540741</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -904,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PowerCo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="329" column="90" lean-forward="false" selection-start-line="329" selection-start-column="90" selection-end-line="329" selection-end-column="90" />
+        <state relative-caret-position="260">
+          <caret line="165" column="151" lean-forward="false" selection-start-line="165" selection-start-column="151" selection-end-line="165" selection-end-column="151" />
           <folding />
         </state>
       </provider>

@@ -161,9 +161,9 @@ def getAccount(intent, session):
 
     # we need to deal with Java style dates
     #speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
-    speech_output += "for the period ending July 31, 2016."
+    speech_output += "for the period ending Febuary 28, 2017."
 
-    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on August 10"
+    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on March 10"
 
     speech_output+="</speak>"
 
