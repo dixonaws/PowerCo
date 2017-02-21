@@ -105,7 +105,7 @@ def on_intent(intent_request, session):
 
 def verifyPIN(intent, session):
     # We hardcode the matching PIN for now
-    intCorrectPIN = 9877
+    intCorrectPIN = 9876
 
     print("*** verifyPIN: I received intent " + str(intent));
 
@@ -327,7 +327,7 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.3)! To verify it's you, please say " \
+    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.4)! To verify it's you, please say " \
                     "the 4 digit code that you created when you enabled the skill for the first time.</speak>"
 
     # If the user either does not reply to the welcome message or says something
