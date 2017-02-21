@@ -284,7 +284,7 @@ def on_session_ended(session_ended_request, session):
 def getCustomer(id):
     print("*** in getCustomer()")
 
-    baseurl="http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com/api/customer/"
+    baseurl="http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com/api/customers/"
     accountUrl=baseurl+str(id)
 
     startTime = int(round(time.time() * 1000))
@@ -323,7 +323,7 @@ def get_welcome_response():
     add those here
     """
 
-    print("*** in get_welcome_respomse()")
+    print("*** in get_welcome_response()")
 
     session_attributes = {}
     card_title = "Welcome"
