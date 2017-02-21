@@ -49,8 +49,8 @@
       <file leaf-file-name="PowerCo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PowerCo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="107" column="24" lean-forward="false" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+            <state relative-caret-position="-1708">
+              <caret line="286" column="73" lean-forward="false" selection-start-line="286" selection-start-column="73" selection-end-line="286" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -381,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487647819620</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated PIN">
+      <created>1487649658245</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1487649658246</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -434,7 +441,8 @@
     <MESSAGE value="Added deployment instructions" />
     <MESSAGE value="Changed hardcoded PIN" />
     <MESSAGE value="Updated Jenkins build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Jenkins build" />
+    <MESSAGE value="Updated PIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated PIN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PowerCo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="107" column="24" lean-forward="false" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+        <state relative-caret-position="-1708">
+          <caret line="286" column="73" lean-forward="false" selection-start-line="286" selection-start-column="73" selection-end-line="286" selection-end-column="73" />
           <folding />
         </state>
       </provider>
