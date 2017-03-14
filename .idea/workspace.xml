@@ -49,8 +49,8 @@
       <file leaf-file-name="PowerCo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PowerCo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
+            <state relative-caret-position="2595">
+              <caret line="330" column="90" lean-forward="false" selection-start-line="330" selection-start-column="90" selection-end-line="330" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -579,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487655016467</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Adjusted version descriptor">
+      <created>1489452835592</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1489452835592</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -636,7 +643,8 @@
     <MESSAGE value="Updated API URLs" />
     <MESSAGE value="Cleaned build" />
     <MESSAGE value="Fixed API URL for customers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed API URL for customers" />
+    <MESSAGE value="Adjusted version descriptor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted version descriptor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -918,8 +926,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PowerCo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
+        <state relative-caret-position="2595">
+          <caret line="330" column="90" lean-forward="false" selection-start-line="330" selection-start-column="90" selection-end-line="330" selection-end-column="90" />
           <folding />
         </state>
       </provider>
