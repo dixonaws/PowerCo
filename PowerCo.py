@@ -14,8 +14,9 @@ import time
 
 # We only support one customer in this version, "customer 1" in the mainMenu() function
 # Customer 1 has one account
-# The account has two invoices
+# The account has three invoices
 # Each invoice includes a service addresses and an amount due
+# This account data is inserted into an in-memory database from the configuration in Bootstrap.groovy
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -163,7 +164,7 @@ def getAccount(intent, session):
     #speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
     speech_output += "for the period ending Febuary 28, 2017."
 
-    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on March 10"
+    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on April 10"
 
     speech_output+="</speak>"
 
@@ -327,7 +328,7 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.5)! To verify it's you, please say " \
+    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.6)! To verify it's you, please say " \
                     "the 4 digit code that you created when you enabled the skill for the first time.</speak>"
 
     # If the user either does not reply to the welcome message or says something
