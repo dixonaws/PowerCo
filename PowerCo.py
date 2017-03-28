@@ -18,6 +18,8 @@ import time
 # Each invoice includes a service addresses and an amount due
 # This account data is inserted into an in-memory database from the configuration in Bootstrap.groovy
 
+strApiBaseUrl="http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com"
+
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
     etc.) The JSON body of the request is provided in the event parameter.
@@ -141,7 +143,7 @@ def getAccount(intent, session):
 
     selectedAccount=intent['slots']['Account']['value']
 
-    url = "http://172.16.1.54:8080/api/invoices/" + str(selectedAccount)
+    url = strApiBaseUrl + "/api/invoices/" + str(selectedAccount)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
@@ -187,7 +189,7 @@ def getAccount(intent, session):
 def retrieveAccountInfo(id):
     print("*** in retrieveAccountInfo()")
 
-    url = "http://172.16.1.54:8080/api/invoices/" + str(id)
+    url = strApiBaseUrl + "/api/invoices/" + str(id)
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
@@ -216,7 +218,8 @@ def retrieveAccountInfo(id):
 
 def getAccountById(accountId):
     print("*** in getAccountById(), getting account" + str(accountId))
-    accountUrl="http://172.16.1.54:8080/api/accounts/" + str(accountId)
+
+    accountUrl=strApiBaseUrl + "/api/accounts/" + str(accountId)
 
     startTime=int(round(time.time() * 1000))
     endTime=0;
@@ -285,7 +288,7 @@ def on_session_ended(session_ended_request, session):
 def getCustomer(id):
     print("*** in getCustomer()")
 
-    baseurl="http://172.16.1.54:8080/api/customers/"
+    baseurl=strApiBaseUrl + "/api/customers/"
     accountUrl=baseurl+str(id)
 
     startTime = int(round(time.time() * 1000))
