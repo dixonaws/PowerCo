@@ -331,7 +331,7 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "<speak>Hi there! You're on line with The Power Come pany (version 3.8)! To verify it's you, please say " \
+    speech_output = "<speak>Hi there! You're on line with Do It Best (version 4.0)! To verify it's you, please say " \
                     "the 4 digit code that you created when you enabled the skill for the first time.</speak>"
 
     # If the user either does not reply to the welcome message or says something
