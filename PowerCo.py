@@ -18,7 +18,7 @@ import time
 # Each invoice includes a service addresses and an amount due
 # This account data is inserted into an in-memory database from the configuration in Bootstrap.groovy
 
-strApiBaseUrl="http://resttest-invoice-api-a.us-east-1.elasticbeanstalk.com"
+strApiBaseUrl="http://172.16.1.198:8080"
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
