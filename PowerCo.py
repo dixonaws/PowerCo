@@ -3,6 +3,7 @@ from __future__ import print_function
 import urllib2
 import json
 import time
+import datetime
 
 # PowerCo sample skill
 # 7-6-2016, John Dixon
@@ -18,7 +19,8 @@ import time
 # Each invoice includes a service addresses and an amount due
 # This account data is inserted into an in-memory database from the configuration in Bootstrap.groovy
 
-strApiBaseUrl="http://172.16.1.198:8080"
+strApiBaseUrl = "http://172.16.1.198:8080"
+
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -141,7 +143,15 @@ def getAccount(intent, session):
 
     card_title = "Welcome"
 
-    selectedAccount=intent['slots']['Account']['value']
+    # Calculate the due date, 30 days from today
+    dateNow = datetime.datetime.now()
+    dateDueDate = (dateNow + datetime.timedelta(days=30))
+    strDueDay = dateDueDate.strftime("%d")
+    strDueMonth = dateDueDate.strftime("%B")
+    strCurrentDay = dateNow.strftime("%d")
+    strCurrentMonth = dateNow.strftime("%B")
+
+    selectedAccount = intent['slots']['Account']['value']
 
     url = strApiBaseUrl + "/api/invoices/" + str(selectedAccount)
 
@@ -159,16 +169,16 @@ def getAccount(intent, session):
     strAmountCents = str((JSONinvoice['amountCents']))
     strServicePeriodEnd = str((JSONinvoice['servicePeriodEnd']))
 
-    speech_output="<speak>"
-    speech_output+="I found details for that account. The current amount due is " + strAmountDollars + " dollars and " + strAmountCents + " cents"
+    speech_output = "<speak>"
+    speech_output += "I found details for that account. The current amount due is " + strAmountDollars + " dollars and " + strAmountCents + " cents"
 
-    # we need to deal with Java style dates
-    #speech_output += "for the period ending " + "<say-as interpret-as='date'>" + strServicePeriodEnd + "</say-as>"
-    speech_output += "for the period ending March 10, 2017. Your energy consumption last period was 49 kilowatt hours."
+    speech_output += " for the period ending " + strCurrentMonth + " " + strCurrentDay + ". Your energy consumption " \
+                                                                                         "last period was 49 kilowatt hours."
 
-    speech_output+="<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your financial institution on April 10"
+    speech_output += "<break time='0.5s'/>I see that your are enrolled in AutoPay! This amount will be requested from your " \
+                     "financial institution on " + strDueMonth + " " + strDueDay
 
-    speech_output+="</speak>"
+    speech_output += "</speak>"
 
     # speech_output = "Here are some details for that account... account number " + strAccountNumber + ",,," \
     #                                                                                                 "Total amount due for the month of May: $94.12" + ",,,," \
@@ -193,7 +203,7 @@ def retrieveAccountInfo(id):
 
     opener = urllib2.build_opener()
     opener.addheaders = [('Accept', 'application/json')]
-    response=0
+    response = 0
 
     try:
         response = opener.open(url, timeout=2).read()
@@ -212,32 +222,33 @@ def retrieveAccountInfo(id):
     JSONinvoice = json.loads(str(response))
 
     print("*** done with retriveAccountInfo(), returning JSONinvoice object...")
-    return(JSONinvoice)
+    return (JSONinvoice)
+
 
 # ------------------------- getAccount()
 
 def getAccountById(accountId):
     print("*** in getAccountById(), getting account" + str(accountId))
 
-    accountUrl=strApiBaseUrl + "/api/accounts/" + str(accountId)
+    accountUrl = strApiBaseUrl + "/api/accounts/" + str(accountId)
 
-    startTime=int(round(time.time() * 1000))
-    endTime=0;
+    startTime = int(round(time.time() * 1000))
+    endTime = 0;
     print(accountUrl + ": GETting account... ")
 
-    opener=urllib2.build_opener()
+    opener = urllib2.build_opener()
 
     # ask the API to return JSON
-    opener.addheaders=[('Accept', 'application/json')]
+    opener.addheaders = [('Accept', 'application/json')]
 
-    response=""
+    response = ""
 
     try:
         # our response string should result in a JSON object
-        response=opener.open(accountUrl).read()
+        response = opener.open(accountUrl).read()
 
-        endTime=int(round(time.time() * 1000))
-        print("done (" + str(endTime-startTime) + " ms).")
+        endTime = int(round(time.time() * 1000))
+        print("done (" + str(endTime - startTime) + " ms).")
 
     except urllib2.HTTPError:
         print("Error in GET...")
@@ -246,7 +257,8 @@ def getAccountById(accountId):
     JSONaccounts = json.loads(str(response))
 
     print("*** done with getAccountById(), returning JSONaccounts...")
-    return(JSONaccounts)
+    return (JSONaccounts)
+
 
 # ------------------------- getAccount()
 
@@ -288,8 +300,8 @@ def on_session_ended(session_ended_request, session):
 def getCustomer(id):
     print("*** in getCustomer()")
 
-    baseurl=strApiBaseUrl + "/api/customers/"
-    accountUrl=baseurl+str(id)
+    baseurl = strApiBaseUrl + "/api/customers/"
+    accountUrl = baseurl + str(id)
 
     startTime = int(round(time.time() * 1000))
     endTime = 0;
@@ -319,6 +331,7 @@ def getCustomer(id):
 
     print("*** done with getCustomer, returning JSONcustomer...")
     return (JSONcustomer)
+
 
 # --------------- end getCustomer() ------------------
 
@@ -354,27 +367,28 @@ def mainMenu():
 
     # hit the API and get the customer details, like the first name, last name, and associated accounts
     # for now, we hardcode the customer number
-    JSONcustomer=getCustomer(1)
+    JSONcustomer = getCustomer(1)
 
-    accountFirstName=JSONcustomer['firstName']
-    accountLastName=JSONcustomer['lastName']
+    accountFirstName = JSONcustomer['firstName']
+    accountLastName = JSONcustomer['lastName']
 
     JSONaccounts = JSONcustomer['accounts']
-    intAccounts=len(JSONaccounts)
+    intAccounts = len(JSONaccounts)
 
-    speech_output="<speak>"
-    speech_output+="Great! Hello " + accountFirstName + " " + accountLastName + "! ... "
-    speech_output+="I found " + str(intAccounts) + " accounts in your profile. Which account can I help you with?"
+    speech_output = "<speak>"
+    speech_output += "Great! Hello " + accountFirstName + " " + accountLastName + "! ... "
+    speech_output += "I found " + str(intAccounts) + " accounts in your profile. Which account can I help you with?"
 
     # loop through the accounts associated with this customer and speak the service addresses
-    i=1
+    i = 1
     for accounts in JSONaccounts:
         account = getAccountById(accounts['id'])
-        speech_output+="Account " + str(i) + "<break time='0.5s'/> <say-as interpret-as='digits'>" + account['serviceAddress'] + "</say-as>"
-        speech_output+="<break time='1s'/>"
-        i+=1
+        speech_output += "Account " + str(i) + "<break time='0.5s'/> <say-as interpret-as='digits'>" + account[
+            'serviceAddress'] + "</say-as>"
+        speech_output += "<break time='1s'/>"
+        i += 1
 
-    speech_output+="</speak>"
+    speech_output += "</speak>"
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
@@ -405,10 +419,10 @@ def handle_session_end_request():
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
     return {
-#        'outputSpeech': {
-#            'type': 'PlainText',
-#            'text': output
-#        },
+        #        'outputSpeech': {
+        #            'type': 'PlainText',
+        #            'text': output
+        #        },
         'outputSpeech': {
             'type': 'SSML',
             'ssml': output
@@ -435,11 +449,11 @@ def build_response(session_attributes, speechlet_response):
         'response': speechlet_response
     }
 
+
 def main():
     print("*** in main()")
 
-    JSONinvoice=retrieveAccountInfo(1)
+    JSONinvoice = retrieveAccountInfo(1)
 
     strAmountDollars = (JSONinvoice['amountDollars'])
     print(strAmountDollars)
-
